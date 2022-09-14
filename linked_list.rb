@@ -17,6 +17,12 @@ class LinkedList
   def initialize(node)
     @head = node
   end
+  #This method adds a new node containing the value to the start of the list.
+  def append(value)
+    new_node = Node.new(value)
+    new_node.next_node = head
+    head = new_node
+  end
 end
 
 
