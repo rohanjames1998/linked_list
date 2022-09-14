@@ -26,10 +26,9 @@ class LinkedList
 
   def print
     current_node = head
-    loop do
-      puts current_node
+    while current_node
+      puts current_node.value
       current_node = current_node.next_node
-      break if current_node.value == nil
     end
   end
 end
@@ -44,5 +43,5 @@ node_2.next_node = node_3
 node_3.next_node = node_4
 
 my_list = LinkedList.new(node)
-
+my_list.print
 
