@@ -34,6 +34,18 @@ class LinkedList
     self.head = new_node
   end
 
+  #This method returns the tails of the linked list
+  #(i.e., The last node in the list).
+  def tail
+    current_node = head
+    while current_node
+      current_node = current_node.next_node
+      if current_node.next_node == nil
+        return current_node
+      end
+    end
+  end
+
 
 end
 
@@ -49,5 +61,6 @@ node_3.next_node = node_4
 my_list = LinkedList.new(node)
 my_list.append(0)
 my_list.print
+ puts my_list.tail
 
 
