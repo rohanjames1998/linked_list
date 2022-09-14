@@ -5,7 +5,6 @@ class Node
   #to nil unless specified.
   def initialize(value=nil)
     @value = value
-
   end
 end
 
@@ -27,11 +26,19 @@ class LinkedList
     end
   end
 
-  #This method adds a new node containing the value to the start of the list.
+  #This method adds a new node containing the 'value'
+  #to the start of the list.
   def append(value)
     new_node = Node.new(value)
     new_node.next_node = head
     self.head = new_node
+  end
+
+  #This method adds a new node with 'value' to the end
+  #of the list.
+  def prepend(value)
+    new_node = Node.new(value)
+    tail.next_node = new_node
   end
 
   #This method returns the tails of the linked list
@@ -41,7 +48,7 @@ class LinkedList
     while current_node
       current_node = current_node.next_node
       if current_node.next_node == nil
-        return current_node
+        return current_node.value
       end
     end
   end
@@ -60,7 +67,7 @@ node_3.next_node = node_4
 
 my_list = LinkedList.new(node)
 my_list.append(0)
-my_list.print
- puts my_list.tail
+my_list.prepend(5)
+puts
 
 
