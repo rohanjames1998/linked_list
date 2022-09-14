@@ -65,17 +65,15 @@ class LinkedList
   end
   #This function returns the node at given index
   def at(index)
-    current_index = index
+    current_index = 0
     current_node = head
-    while  current_node
+    while current_node
       if current_index == index
         return current_node.value
       end
       current_index += 1
       current_node = current_node.next_node
     end
-  end
-
   end
 
 
@@ -93,6 +91,7 @@ node_3.next_node = node_4
 my_list = LinkedList.new(node)
 my_list.append(0)
 my_list.prepend(5)
-my_list.at(3)
+p my_list.at(3)
+my_list.print
 
 
