@@ -23,6 +23,15 @@ class LinkedList
     new_node.next_node = head
     head = new_node
   end
+
+  def print
+    current_node = head
+    loop do
+      puts current_node
+      current_node = current_node.next_node
+      break if current_node.value == nil
+    end
+  end
 end
 
 
