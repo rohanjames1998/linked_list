@@ -43,13 +43,13 @@ class LinkedList
 
   #This method returns the size of list
   def size
-    size = 1
+    size = 0
     current_node = head
     while current_node
       current_node = current_node.next_node
+      size += 1
     end
     return size
-  end
   end
 
   #This method returns the tails of the linked list
@@ -79,5 +79,5 @@ node_3.next_node = node_4
 my_list = LinkedList.new(node)
 my_list.append(0)
 my_list.prepend(5)
-
+puts my_list.size
 
