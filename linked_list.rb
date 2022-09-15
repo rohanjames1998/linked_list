@@ -151,6 +151,27 @@ class LinkedList
     end
   end
 
+
+  #This method removes node at specified index from the list.
+  def remove_at(index)
+    current_index = 0
+    current_node = head
+    while current_node
+      if current_index == index
+        #We change the value  node we want to delete with
+        #the value of the node next to it.
+        current_node.value = current_node.next_node.value
+        #Finally we change its pointer to point at the node that comes after
+        #the node next to it.(i.e., the node that is 2 index away from the node we want to delete).
+        current_node.next_node = current_node.next_node.next_node
+        break
+      else
+        current_node = current_node.next_node
+        current_index += 1
+      end
+    end
+  end
+
 end
 
 
@@ -163,9 +184,22 @@ node_2.next_node = node_3
 node_3.next_node = node_4
 
 my_list = LinkedList.new(node)
-# my_list.append(0)
+puts "Original LinkedList: #{my_list.to_s}"
+my_list.append(0)
+puts "\n List after appending 0: #{my_list.to_s}"
 my_list.prepend(5)
-my_list.at(3)
-puts my_list.to_s
+puts "\n List after prending 5: #{ my_list.to_s}"
+puts "\n Size of my_list: #{my_list.size}"
+puts "\n Head of  my_list:#{my_list.head}. Tail of my_list:#{my_list.tail}."
+puts "\n Node at index 3 of my_list: #{my_list.at(3)}"
+my_list.pop
+puts "\n my_list after pop method: #{my_list.to_s}"
+puts "\n Does my_list contain integer 3?: #{my_list.contains(3)}"
+puts "\n Where is integer 2 on my_list: At index #{my_list.find(2)}"
+my_list.insert_at('a', 2)
+puts "\n my_list after inserting 'a' at index 2: #{my_list.to_s}"
+my_list.remove_at(2)
+puts "\n my_list after removing 'a' from index 2: #{my_list.to_s}"
+
 
 
