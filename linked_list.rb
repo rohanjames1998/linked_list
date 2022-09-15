@@ -107,6 +107,21 @@ class LinkedList
     return false
   end
 
+  #This method returns the index of value given. Else,
+  #returns nil.
+  def find(value)
+    current_index = 0
+    current_node = head
+    while current_node
+      if current_node.value == value
+        return current_index
+      else
+        current_node = current_node.next_node
+        current_index += 1
+      end
+    end
+  end
+
 end
 
 
@@ -123,5 +138,6 @@ my_list.append(0)
 my_list.prepend(5)
 my_list.at(3)
 my_list.print
+p my_list.find(5)
 
 
