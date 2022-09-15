@@ -184,17 +184,17 @@ node_2.next_node = node_3
 node_3.next_node = node_4
 
 my_list = LinkedList.new(node)
-puts "Original LinkedList: #{my_list.to_s}"
+puts " Original LinkedList: #{my_list.to_s}"
 my_list.append(0)
 puts "\n List after appending 0: #{my_list.to_s}"
 my_list.prepend(5)
-puts "\n List after prending 5: #{ my_list.to_s}"
+puts "\n List after prepending 5: #{ my_list.to_s}"
 puts "\n Size of my_list: #{my_list.size}"
 puts "\n Head of  my_list:#{my_list.head}. Tail of my_list:#{my_list.tail}."
 puts "\n Node at index 3 of my_list: #{my_list.at(3)}"
 my_list.pop
 puts "\n my_list after pop method: #{my_list.to_s}"
-puts "\n Does my_list contain integer 3?: #{my_list.contains(3)}"
+puts "\n Does my_list contain integer 3?: #{my_list.contains?(3)}"
 puts "\n Where is integer 2 on my_list: At index #{my_list.find(2)}"
 my_list.insert_at('a', 2)
 puts "\n my_list after inserting 'a' at index 2: #{my_list.to_s}"
