@@ -130,6 +130,7 @@ class LinkedList
     while current_node
       if current_node.next_node == nil
         output +=  "( #{current_node.value} ) -> nil"
+        break
       else
         output += "( #{current_node.value} ) -> "
         current_node = current_node.next_node
@@ -154,6 +155,7 @@ my_list = LinkedList.new(node)
 my_list.append(0)
 my_list.prepend(5)
 my_list.at(3)
-my_list.print
+# my_list.print
+puts my_list.to_s
 
 
