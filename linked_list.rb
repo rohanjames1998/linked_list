@@ -75,16 +75,20 @@ class LinkedList
       current_node = current_node.next_node
     end
   end
-
+  #This function removes the last node from the list
+  #and returns the node removed from the list.
   def pop
     current_node = head
+    # Last node stays one step ahead of the current_node.
     while current_node
-      if current_node.next_node.next_node == nil
-        break
+      last_node = current_node.next_node
+      if last_node.next_node == nil
+        current_node.next_node = nil
+        return last_node
       else
         current_node = current_node.next_node
       end
-      current_node.next_node = nil
+    end
   end
 
 
@@ -102,7 +106,8 @@ node_3.next_node = node_4
 my_list = LinkedList.new(node)
 my_list.append(0)
 my_list.prepend(5)
-p my_list.at(3)
+my_list.at(3)
+p my_list.pop
 my_list.print
 
 
