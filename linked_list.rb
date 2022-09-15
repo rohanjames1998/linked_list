@@ -122,6 +122,23 @@ class LinkedList
     end
   end
 
+  #This method returns list as a string so user can
+  #print it to their console.
+  def to_s
+    current_node = head
+    output = ""
+    while current_node
+      if current_node.next_node == nil
+        output +=  "( #{current_node.value} ) -> nil"
+      else
+        output += "( #{current_node.value} ) -> "
+        current_node = current_node.next_node
+      end
+    end
+    return output
+  end
+
+
 end
 
 
@@ -138,6 +155,5 @@ my_list.append(0)
 my_list.prepend(5)
 my_list.at(3)
 my_list.print
-p my_list.find(5)
 
 
