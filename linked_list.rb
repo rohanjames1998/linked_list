@@ -63,7 +63,7 @@ class LinkedList
       end
     end
   end
-  #This function returns the node at given index
+  #This function returns the node.value  at given index
   def at(index)
     current_index = 0
     current_node = head
@@ -74,6 +74,17 @@ class LinkedList
       current_index += 1
       current_node = current_node.next_node
     end
+  end
+
+  def pop
+    current_node = head
+    while current_node
+      if current_node.next_node.next_node == nil
+        break
+      else
+        current_node = current_node.next_node
+      end
+      current_node.next_node = nil
   end
 
 
