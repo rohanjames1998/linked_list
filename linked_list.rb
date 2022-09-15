@@ -130,6 +130,29 @@ class LinkedList
     return output
   end
 
+  #This method inserts a new node into the index
+  #specified.
+  def insert_at(value, index)
+    new_node = Node.new(value)
+    #All we need is the node that comes before the
+    #index we want to insert our new node at.
+    previous_node_index = index - 1
+    current_index = 0
+    current_node = head
+    while current_node
+      if current_index == previous_node_index
+        new_node.next_node = current_node.next_node
+        current_node.next_node = new_node
+        break
+      else
+        current_index += 1
+        current_node = current_node.next_node
+      end
+    end
+  end
+
+
+  end
 
 end
 
@@ -143,7 +166,7 @@ node_2.next_node = node_3
 node_3.next_node = node_4
 
 my_list = LinkedList.new(node)
-my_list.append(0)
+# my_list.append(0)
 my_list.prepend(5)
 my_list.at(3)
 puts my_list.to_s
