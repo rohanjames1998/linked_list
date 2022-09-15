@@ -17,15 +17,6 @@ class LinkedList
     @head = node
   end
 
-  #This method prints all the nodes in the list
-  def print
-    current_node = head
-    while current_node
-      puts current_node.value
-      current_node = current_node.next_node
-    end
-  end
-
   #This method adds a new node containing the 'value'
   #to the start of the list.
   def append(value)
@@ -155,7 +146,6 @@ my_list = LinkedList.new(node)
 my_list.append(0)
 my_list.prepend(5)
 my_list.at(3)
-# my_list.print
 puts my_list.to_s
 
 
