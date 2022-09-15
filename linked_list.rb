@@ -63,7 +63,8 @@ class LinkedList
       end
     end
   end
-  #This function returns the node.value  at given index
+
+  #This method returns the node.value at given index
   def at(index)
     current_index = 0
     current_node = head
@@ -75,7 +76,8 @@ class LinkedList
       current_node = current_node.next_node
     end
   end
-  #This function removes the last node from the list
+
+  #This method removes the last node from the list
   #and returns the node removed from the list.
   def pop
     current_node = head
@@ -91,6 +93,19 @@ class LinkedList
     end
   end
 
+  #This method returns true if the list contains
+  #the value given. Else, returns false.
+  def contains?(value)
+    current_node = head
+    while current_node
+      if current_node.value == value
+        return true
+      else
+        current_node = current_node.next_node
+      end
+    end
+    return false
+  end
 
 end
 
@@ -107,7 +122,6 @@ my_list = LinkedList.new(node)
 my_list.append(0)
 my_list.prepend(5)
 my_list.at(3)
-p my_list.pop
 my_list.print
 
 
